@@ -11,7 +11,7 @@
 			<h1 class="color53" >O'ssurance</h1>
 			<h2 class="color53" >Calcul du tarif de votre client</h2>
 
-			<form action="index.php" method="POST">
+			<form action="switch.php" method="POST">
 				<label class="black900 block" for="age">Âge</label>
 				<input type="number" name="age">
 				<br>
@@ -40,7 +40,7 @@
 			$palier = 1;
 
 			if (isset($_POST['age'],$_POST['annees_permis'],$_POST['accidents'],$_POST['annees_assureur'])) {
-				if ($_POST['accidents'] > 0 && $_POST ['accidents'] < 4) {
+				if ($_POST['accidents'] > 0) {
 					$palier = $palier - $_POST['accidents'];
 				}
 				if ($_POST['annees_permis'] > 2) {
@@ -55,19 +55,25 @@
 				if ($_POST['accidents'] >= 4) {
 					$palier = 0;
 				}
-
-				if ($palier <= 0){
-					$couleur = "<strong class=\"grey\"> Refus </strong>";
-				} elseif ($palier === 1){
-					$couleur = "<strong class=\"red\"> Rouge </strong>";
-				} elseif ($palier === 2){
-					$couleur = "<strong class=\"orange\"> Orange </strong>";
-				} elseif ($palier === 3){
-					$couleur = "<strong class=\"green\"> Vert </strong>";
-				} elseif ($palier === 4){
-					$couleur = "<strong class=\"blue\"> Bleu </strong>";
+				
+				switch ($palier) {
+					case 0:
+						$couleur = "<strong class=\"grey\"> Refus </strong>";
+						break;
+					case 1:
+						$couleur = "<strong class=\"red\"> Rouge </strong>";
+						break;
+					case 2:
+						$couleur = "<strong class=\"orange\"> Orange </strong>";
+						break;
+					case 3:
+						$couleur = "<strong class=\"green\"> Vert </strong>";
+						break;
+					case 4:
+						$couleur = "<strong class=\"blue\"> Bleu </strong>";
+						break;
 				}
-
+	
 				echo "<p>Votre client a droit au tarif" . $couleur . ".</p>";
 			}
 

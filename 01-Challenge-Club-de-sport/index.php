@@ -20,6 +20,7 @@
                 echo "<p class=\"directive\">Veuillez indiquer l'âge de votre enfant.</p>";
                 echo "<br>";
             }
+            
 
             if (isset($age)) {
                 if($age < 6){

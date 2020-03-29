@@ -1,0 +1,58 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    border-top: 3px solid black;
+    width: 900px;
+    padding: 0.5em;
+}
+
+.grey {
+    color: grey;
+}
+
+.red {
+    color: red;
+}
+
+.orange {
+    color: orange;
+}
+
+.green {
+    color: green;
+}
+
+.blue {
+    color: blue;
+}
+
+.color53 {
+    color: #006a53;
+}
+
+.black900 {
+    font-weight: 900;
+}
+
+.superbutton {
+    background-color: #006a53;
+    color: white;
+    padding: 1em;
+    border-width: 0px;
+}
+
+.superbutton:hover {
+    background-color: rgb(65, 64, 64);
+}
+
+.block {
+    display: block;
+}
+
+.left {
+    padding-right: 2em;
+}
+
+.right {
+
+}
